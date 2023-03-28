@@ -13,8 +13,22 @@ app.use(
   })
 );
 
-let posts = [];
-let nextId = 1;
+// let posts = [];
+// let nextId = 1;
+
+let posts = [
+  {
+    'card1': {
+      id: 1,
+      content: 'content1'
+    },
+    'card2': {
+      id: 2,
+      content: 'content2'
+    }
+  }
+];
+let nextId = 3;
 
 app.get("/posts", (req, res) => {
   res.send(JSON.stringify(posts));
