@@ -6,14 +6,11 @@ import { nanoid } from "nanoid";
 
 function MainPage() {
   const [data, setData] = useState('')
-  const fetchApi = () => fetch('http://localhost:7070/posts');
+  let url = 'http://localhost:7070/posts'
+  const fetchApi = () => fetch(url);
   useEffect(() => {
     fetchApi().then((result) => result.json()).then((result) => {
-      // this.setState({
-      //   data: result,
-      // })
       setData(result)
-      // console.log(result)
   })
 
   }, [])
@@ -22,12 +19,24 @@ function MainPage() {
   console.log(dataArr)
   return (
     <>
-    <p className="fieldCreateTitle">
+    <div className="fieldCreateTitle">
       <div className="btnCreateTitle"><span>Создать пост</span></div>
-    </p>
-    <ul className="main-page">      
+    </div>
+    <ul className="list-post">
       {dataArr.map((item) => (
-        <li className="card" key={nanoid()}>{item[1].content}</li>
+        <li className="post" key={nanoid()}>
+          <div className="name-user">Пользователь</div>
+          <div className="content">{item[1].content}</div>
+          <hr />
+            <div className="like-comment">
+              <div className="like">Нравится</div>
+              <div className="comment">Комментировать</div>
+            </div>
+          <hr />
+          <div className="input">
+          <input type="text" className="input-field" placeholder="Напишите комментарий" disabled></input>
+          </div>
+        </li>
       ))}
     </ul>
     </>

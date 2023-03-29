@@ -20,11 +20,11 @@ let posts =
   {
     'card1': {
       id: 1,
-      content: 'content1'
+      content: 'ПОСТ1'
     },
     'card2': {
       id: 2,
-      content: 'content2'
+      content: 'ПОСТ2'
     }
   }
 ;
