@@ -16,7 +16,7 @@ app.use(
 // let posts = [];
 // let nextId = 1;
 
-let posts = [
+let posts = 
   {
     'card1': {
       id: 1,
@@ -27,7 +27,7 @@ let posts = [
       content: 'content2'
     }
   }
-];
+;
 let nextId = 3;
 
 app.get("/posts", (req, res) => {

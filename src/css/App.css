@@ -1,4 +1,36 @@
+* {
+  box-sizing: border-box;
+  list-style-type: none;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+}
+
 .app {
+  width: 40%;
+  background: #E8EAED;
   text-align: center;
 }
+
+.fieldCreateTitle {
+  text-align: right;
+  background: white;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.btnCreateTitle {
+  display: inline-block;
+  margin: 7px;
+  background: #4469AE;
+  color: white;
+  padding: 3px;
+}
+
+span {
+  padding: 7px;
+}
+
 
