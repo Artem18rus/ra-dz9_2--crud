@@ -12,7 +12,7 @@
 }
 
 .app {
-  width: 40%;
+  width: 30%;
   background: #E8EAED;
   text-align: center;
   padding: 7px;
@@ -40,10 +40,10 @@ span {
 }
 
 .list-post {
-  /* padding: 0 10px; */
+
 }
 
-.post {
+.post, .create-post {
   background: white;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -93,5 +93,7 @@ span {
   border-radius: 5px;
 }
 
-
-
+.section-list {
+  display: flex;
+  column-gap: 20px;
+}

@@ -1,5 +1,5 @@
 import { React, useState, useEffect, useParams } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import { nanoid } from "nanoid";
 
 
@@ -20,7 +20,7 @@ function MainPage() {
   return (
     <>
     <div className="fieldCreateTitle">
-      <div className="btnCreateTitle"><span>Создать пост</span></div>
+      <Link to="/posts/new"><div className="btnCreateTitle"><span>Создать пост</span></div></Link>
     </div>
     <ul className="list-post">
       {dataArr.map((item) => (
