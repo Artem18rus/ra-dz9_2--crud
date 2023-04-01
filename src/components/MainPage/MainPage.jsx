@@ -16,7 +16,7 @@ function MainPage() {
   }, [])
 
   const dataArr = Object.entries(data);
-  console.log(dataArr)
+  // console.log(dataArr)
   return (
     <>
     <div className="fieldCreateTitle">

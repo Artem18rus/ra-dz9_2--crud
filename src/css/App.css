@@ -25,7 +25,7 @@
   border-radius: 5px;
 }
 
-.btnCreateTitle {
+.btnCreateTitle, .btnPublish {
   display: inline-block;
   margin: 7px;
   background: #4469AE;
@@ -47,7 +47,17 @@ span {
   background: white;
   margin-top: 10px;
   margin-bottom: 10px;
+
+}
+
+.page-create-post {
   padding: 10px;
+}
+
+.create-post {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
 }
 
 .list-post {
@@ -93,7 +103,40 @@ span {
   border-radius: 5px;
 }
 
+.page-create-post {
+  background: white;
+}
+
 .section-list {
   display: flex;
-  column-gap: 20px;
+  column-gap: 10px;
+}
+
+.closeIcon {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+.btn-close {
+  border: 0;
+  padding: 0;
+}
+
+textarea {
+  width: 100%;
+  border: none;
+  resize: none;
+  margin-top: 10px;
+}
+
+/* hr {
+  margin: 10px 0;
+} */
+
+.btnPublish {
+  float: right;
 }
