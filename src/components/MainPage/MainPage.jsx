@@ -13,7 +13,7 @@ function MainPage() {
       setData(result)
   })
 
-  }, [])
+  }, [data])
 
   const dataArr = Object.entries(data);
   // console.log(dataArr)
