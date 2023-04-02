@@ -5,7 +5,7 @@ import Redirect from "../Redirect/Redirect";
 
 
 function CreateApp() {
-  const [change, setChange] = useState('jhm')
+  const [change, setChange] = useState('')
   let closeIcon = require("./img/closeIcon.png");
   let url = 'http://localhost:7070/posts'
 
@@ -25,11 +25,12 @@ function CreateApp() {
 // }, [])
 
   const handlerChange = (e) => {
-    setChange(e.target.value)
+    setChange({value: e.target.value})
   }
-const handlerSubmit = (e) => {
-  e.preventDefault();
-  console.log('handlerSubmit')
+
+  const handlerSubmit = (e) => {
+    e.preventDefault();
+    // console.log('handlerSubmit')
 
     fetch(url, {
     method: "post",
@@ -38,7 +39,7 @@ const handlerSubmit = (e) => {
       'Content-Type': 'application/json'
     },
 
-    body: {"id": 3, "content": `${handlerChange()}`}
+    body: {"id": 3, "content": change.value}
   })
   .then( (response) => {
     console.log(response)
@@ -47,6 +48,7 @@ const handlerSubmit = (e) => {
 
   return (
   <>
+  {/* {console.log(change)} */}
     <div className="page-create-post">
       <div className="create-post">
         <div className="section-list">
@@ -68,6 +70,7 @@ const handlerSubmit = (e) => {
       <hr />
       
       <button><Link to="/"><div className="btnPublish"><span>Опубликовать</span></div></Link></button>
+      {/* <button><div className="btnPublish"><span>Опубликовать</span></div></button> */}
       {/* <Link to="/"></Link> */}
       {/* <Redirect /> */}
     </form>
