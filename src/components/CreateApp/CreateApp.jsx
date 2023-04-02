@@ -1,11 +1,13 @@
 import { React, useState, useEffect, useParams } from "react";
 import { Routes, Route, Link, NavLink, redirect } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { nanoid } from "nanoid";
 import Redirect from "../Redirect/Redirect";
 
 
 function CreateApp() {
   const [change, setChange] = useState('')
+  const navigate = useNavigate();
   let closeIcon = require("./img/closeIcon.png");
 
   const handlerChange = (e) => {
@@ -14,6 +16,7 @@ function CreateApp() {
 
   const handlerSubmit = (e) => {
     e.preventDefault();
+
     //console.log('handlerSubmit')
     
     let url = 'http://localhost:7070/posts'
@@ -22,7 +25,7 @@ function CreateApp() {
     body: JSON.stringify({"id": 3, "content": change.value})
   })
   .then((response) => {
-    console.log(response)
+    navigate("/");
   });
 }
 
