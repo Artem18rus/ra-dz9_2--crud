@@ -39,7 +39,7 @@ function CreateApp() {
       'Content-Type': 'application/json'
     },
 
-    body: {"id": 3, "content": change.value}
+    body: JSON.stringify({"id": 3, "content": change.value})
   })
   .then( (response) => {
     console.log(response)
