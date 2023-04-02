@@ -7,7 +7,7 @@ import Redirect from "../Redirect/Redirect";
 function CreateApp() {
   const [change, setChange] = useState('')
   let closeIcon = require("./img/closeIcon.png");
-  let url = 'http://localhost:7070/posts'
+
 
 //   useEffect(() => {
   // fetch(url, {
@@ -30,18 +30,14 @@ function CreateApp() {
 
   const handlerSubmit = (e) => {
     e.preventDefault();
-    // console.log('handlerSubmit')
-
+    //console.log('handlerSubmit')
+    
+    let url = 'http://localhost:7070/posts'
     fetch(url, {
-    method: "post",
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    },
-
-    body: {"id": 3, "content": change.value}
+    method: "POST",
+    body: JSON.stringify({"id": 3, "content": change.value})
   })
-  .then( (response) => {
+  .then((response) => {
     console.log(response)
   });
 }

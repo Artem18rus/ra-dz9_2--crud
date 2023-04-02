@@ -16,21 +16,21 @@ app.use(
 // let posts = [];
 // let nextId = 1;
 
-let posts = 
-  {
-    'card1': {
+let posts = [
+    {
       id: 1,
       content: 'ПОСТ1'
     },
-    'card2': {
+    {
       id: 2,
       content: 'ПОСТ2'
     }
-  }
-;
+];
+
 let nextId = 3;
 
 app.get("/posts", (req, res) => {
+  // console.log('get')
   res.send(JSON.stringify(posts));
 });
 
@@ -41,6 +41,7 @@ app.get("/posts/:id", (req, res) => {
 });
 
 app.post("/posts", (req, res) => {
+  console.log('post')
   posts.push({ ...req.body, id: nextId++, created: Date.now() });
   res.status(204);
   res.end();
