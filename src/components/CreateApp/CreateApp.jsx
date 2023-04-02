@@ -8,22 +8,6 @@ function CreateApp() {
   const [change, setChange] = useState('')
   let closeIcon = require("./img/closeIcon.png");
 
-
-//   useEffect(() => {
-  // fetch(url, {
-  //   method: "post",
-  //   headers: {
-  //     'Accept': 'application/json',
-  //     'Content-Type': 'application/json'
-  //   },
-
-  //   body: {"id": 3, "content": `${handlerChange()}`}
-  // })
-  // .then( (response) => {
-
-  // });
-// }, [])
-
   const handlerChange = (e) => {
     setChange({value: e.target.value})
   }
