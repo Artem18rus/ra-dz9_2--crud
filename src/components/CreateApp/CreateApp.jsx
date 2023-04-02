@@ -39,7 +39,7 @@ function CreateApp() {
       'Content-Type': 'application/json'
     },
 
-    body: JSON.stringify({"id": 3, "content": change.value})
+    body: {"id": 3, "content": change.value}
   })
   .then( (response) => {
     console.log(response)
@@ -69,8 +69,8 @@ function CreateApp() {
       <textarea name="textarea" rows="2" placeholder="Введите свой пост" className="section-textarea" onChange={handlerChange}></textarea>
       <hr />
       
-      <button><Link to="/"><div className="btnPublish"><span>Опубликовать</span></div></Link></button>
-      {/* <button><div className="btnPublish"><span>Опубликовать</span></div></button> */}
+      {/* <button><Link to="/"><div className="btnPublish"><span>Опубликовать</span></div></Link></button> */}
+      <button><div className="btnPublish"><span>Опубликовать</span></div></button>
       {/* <Link to="/"></Link> */}
       {/* <Redirect /> */}
     </form>
