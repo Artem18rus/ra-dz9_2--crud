@@ -1,33 +1,17 @@
 import { React, useState, useEffect } from "react";
 import { Routes, Route, Link, useParams } from "react-router-dom";
 import { nanoid } from "nanoid";
-// import JsxCreateCard from "../MainPage/JsxCreateCard";
 
 
-function MainPage() {
-  const [data, setData] = useState('')
 
-  let url = 'http://localhost:7070/posts'
-  const fetchApi = () => fetch(url);
-  
-  useEffect(() => {
-    fetchApi()
-    .then((result) => result.json())
-    .then((result) => {
-      setData(result)
-    })
-  }, [])
-
-  const dataArr = Object.entries(data);
-  if(dataArr.length === 0) return;
-
+function JsxCreateCard({dataArr}) {
   return (
     <>
-    <div className="fieldCreateTitle">
+{/*    <div className="fieldCreateTitle">
       <Link to="/posts/new"><div className="btnCreateTitle"><span>Создать пост</span></div></Link>
     </div>
     <ul className="list-post">
-      {dataArr.map((item) => (
+      {dataArr.map((item) => (        
         <li className="post" key={nanoid()}>
         <Link to={`/posts/${item[1].id}`}>
           <div className="name-user">Пользователь</div>
@@ -42,11 +26,11 @@ function MainPage() {
           <div className="input">
           <input type="text" className="input-field" placeholder="Напишите комментарий" disabled></input>
           </div>
-        </li>
+        </li>    
       ))}
-    </ul>
+    </ul>*/}
     </>
   );
 }
 
-export default MainPage;
+export default JsxCreateCard;

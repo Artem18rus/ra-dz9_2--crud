@@ -1,22 +1,34 @@
-import { React, useState, useEffect, useParams } from "react";
-import { Routes, Route, Link, NavLink, redirect } from "react-router-dom";
+import { React, useState, useEffect } from "react";
+import { Routes, Route, Link, NavLink, redirect, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { nanoid } from "nanoid";
-import Redirect from "../Redirect/Redirect";
+// import Redirect from "../Redirect/Redirect";
 
 
 function CreateApp() {
   const [change, setChange] = useState('')
   const navigate = useNavigate();
+
   let closeIcon = require("./img/closeIcon.png");
 
   const handlerChange = (e) => {
     setChange({value: e.target.value})
   }
 
+  useEffect(() => {
+    const closeIcon = document.querySelector('.closeIcon')
+    closeIcon.addEventListener('click', (e) => {
+      navigate("/");
+      return
+    })
+}, [])
+
   const handlerSubmit = (e) => {
     e.preventDefault();
-
+    if(change.value.length < 3) {
+      alert("Поле не заполнено! Не менее 3х символов.")
+      return
+    }
     //console.log('handlerSubmit')
     
     let url = 'http://localhost:7070/posts'
@@ -31,7 +43,6 @@ function CreateApp() {
 
   return (
   <>
-  {/* {console.log(change)} */}
     <div className="page-create-post">
       <div className="create-post">
         <div className="section-list">
@@ -53,7 +64,7 @@ function CreateApp() {
       <hr />
       
       {/* <button><Link to="/"><div className="btnPublish"><span>Опубликовать</span></div></Link></button> */}
-      <button><div className="btnPublish"><span>Опубликовать</span></div></button>
+      <button className="btnPublish"><span>Опубликовать</span></button>
       {/* <Link to="/"></Link> */}
       {/* <Redirect /> */}
     </form>

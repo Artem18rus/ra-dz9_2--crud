@@ -3,6 +3,7 @@
   list-style-type: none;
   padding: 0;
   margin: 0;
+  text-decoration: none;
 }
 
 #root {
@@ -25,7 +26,7 @@
   border-radius: 5px;
 }
 
-.btnCreateTitle, .btnPublish {
+.btnCreateTitle, .btnPublish, .btnPublish, .btnСhange, .btnRemove {
   display: inline-block;
   margin: 7px;
   background: #4469AE;
@@ -50,7 +51,7 @@ span {
 
 }
 
-.page-create-post {
+.page-create-post, .page-open-card {
   padding: 10px;
 }
 
@@ -67,11 +68,14 @@ span {
 .name-user {
   text-align: left;
   padding: 7px 0;
+  color: black;
 }
 
 .content {
   text-align: left;
   padding: 7px 0;
+  font-size: 30px;
+  color: black;
 }
 
 .like-comment {
@@ -137,6 +141,11 @@ textarea {
   margin: 10px 0;
 } */
 
-.btnPublish {
+.btnPublish, .btnСhange, .btnRemove {
   float: right;
+  border: none;
+}
+
+.btnRemove {
+  background: #F08080;
 }

@@ -3,7 +3,8 @@ import './css/App.css';
 import { Routes, Route } from "react-router-dom";
 import MainPage from "./components/MainPage/MainPage";
 import CreateApp from "./components/CreateApp/CreateApp";
-import Redirect from "./components/Redirect/Redirect";
+import CardView from "./components/CardView/CardView";
+
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MainPage />}/>
         <Route path="/posts/new" element={<CreateApp />}/>
+        <Route path="/posts/:cId" element={<CardView />}/>
       </Routes>
     </div>
   );
