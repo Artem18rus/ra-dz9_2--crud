@@ -6,25 +6,29 @@ import { nanoid } from "nanoid";
 
 function CardChange({cId}) {
   const [switchCard, setSwitch] = useState(false)
+  let closeIcon = require("./img/closeIcon.png");
+  
   const changeClick = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     console.log(e.target)
-
-    e.target.parentElement.remove();
-    const app = document.querySelector(".app")
-    console.log(app)
-    app.insertAdjacentHTML('afterbegin', 
-    `<div class="headerChangeCard">
-      <p class="changeCard">Редактировать публикацию</p>
-
-    </div>
-    `
-    )
+    //setSwitch(true)
+    // e.target.parentElement.remove();
+    // const app = document.querySelector(".app")
+    // console.log(app)
+    // app.insertAdjacentHTML('afterbegin', 
+    // `<div class="pageChangeCard">
+    //   <div class="headerChangeCard"
+    //   <p class="changeCard">Редактировать публикацию</p>
+    //   <button type="button" class="btn-close"><img class='closeIcon' src=${closeIcon} alt="close-icon" /></button>
+    //   </div>
+    // </div>
+    // `
+    // )
 }
 
   return (
     <>
-      <form onSubmit={changeClick}><button className="btnСhange"><span>Изменить</span></button></form>
+      <button onClick={changeClick} className="btnСhange"><span>Изменить</span></button>
     </>
   );
 }
