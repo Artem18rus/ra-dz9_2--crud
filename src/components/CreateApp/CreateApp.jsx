@@ -54,7 +54,7 @@ function CreateApp() {
           <hr />
           <NavLink to="/posts/new/" className="section">Ещё</NavLink>
         </div>
-        <button type="button" className="btn-close"><img className='closeIcon' src={closeIcon} alt="close-icon" /></button>
+        <img className='closeIcon' src={closeIcon} alt="close-icon" />
       </div>
       <hr />
     </div>
@@ -62,11 +62,7 @@ function CreateApp() {
     <form onSubmit={handlerSubmit} className="form-create-post">
       <textarea name="textarea" rows="2" placeholder="Введите свой пост" className="section-textarea" onChange={handlerChange}></textarea>
       <hr />
-      
-      {/* <button><Link to="/"><div className="btnPublish"><span>Опубликовать</span></div></Link></button> */}
       <button className="btnPublish"><span>Опубликовать</span></button>
-      {/* <Link to="/"></Link> */}
-      {/* <Redirect /> */}
     </form>
   </>
 

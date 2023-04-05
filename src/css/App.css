@@ -26,7 +26,7 @@
   border-radius: 5px;
 }
 
-.btnCreateTitle, .btnPublish, .btnPublish, .btnСhange, .btnRemove {
+.btnCreateTitle, .btnPublish, .btnСhange, .btnRemove, .btnSave {
   display: inline-block;
   margin: 7px;
   background: #4469AE;
@@ -59,6 +59,7 @@ span {
   display: flex;
   justify-content: space-between;
   position: relative;
+  align-items: center;
 }
 
 .list-post {
@@ -119,15 +120,19 @@ span {
 .closeIcon {
   position: absolute;
   right: 10px;
-  bottom: 10px;
-  width: 15px;
-  height: 15px;
+  /* top: 2px; */
+  width: 10px;
+  height: 10px;
   cursor: pointer;
 }
 
-.btn-close {
+/* .btn-close {
   border: 0;
   padding: 0;
+} */
+
+.block-open-card {
+  background: white;
 }
 
 textarea {
@@ -141,11 +146,41 @@ textarea {
   margin: 10px 0;
 } */
 
-.btnPublish, .btnСhange, .btnRemove {
+.btnPublish, .btnСhange, .btnRemove, .btnSave {
   float: right;
   border: none;
 }
 
 .btnRemove {
   background: #F08080;
+}
+
+.header-card-edit {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  background: #F5F6F7;
+  box-shadow: 0 4px 2px -2px #e4e4e4;
+  line-height: 1.8;
+  font-weight: bold;
+}
+
+.section-edit {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  flex-wrap: wrap;
+  background: white;
+  height: 130px;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.section-edit-post {
+  width: calc(50% - 10px);
+  background: #f5f6f7;
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 10px;
 }

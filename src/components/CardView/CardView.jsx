@@ -2,7 +2,7 @@ import { React, useState, useEffect } from "react";
 import { Routes, Route, Link, NavLink, redirect, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { nanoid } from "nanoid";
-import CardChange from "../CardChange/CardChange";
+import CardChange from "../CardEdit/CardEdit";
 import CardRemove from "../CardRemove/CardRemove";
 import CardOpen from "../CardView/CardOpen";
 
