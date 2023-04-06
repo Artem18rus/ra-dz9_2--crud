@@ -126,6 +126,15 @@ span {
   cursor: pointer;
 }
 
+.closeIcon2 {
+  position: absolute;
+  right: 10px;
+  /* top: 2px; */
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+} 
+
 /* .btn-close {
   border: 0;
   padding: 0;

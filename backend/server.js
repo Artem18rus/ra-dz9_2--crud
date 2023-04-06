@@ -13,24 +13,23 @@ app.use(
   })
 );
 
-// let posts = [];
-// let nextId = 1;
+let posts = [];
+let nextId = 1;
 
-let posts = [
-    {
-      id: 1,
-      content: 'ПОСТ1'
-    },
-    {
-      id: 2,
-      content: 'ПОСТ2'
-    }
-];
+// let posts = [
+//     {
+//       id: 1,
+//       content: 'ПОСТ1'
+//     },
+//     {
+//       id: 2,
+//       content: 'ПОСТ2'
+//     }
+// ];
 
-let nextId = 3;
+// let nextId = 3;
 
 app.get("/posts", (req, res) => {
-  // console.log('get')
   res.send(JSON.stringify(posts));
 });
 
@@ -41,7 +40,12 @@ app.get("/posts/:id", (req, res) => {
 });
 
 app.post("/posts", (req, res) => {
-  console.log('post')
+  const k = posts.findIndex((item) => req.body.id == item.id)
+  if(k !== -1) {
+    posts[k].content = req.body.content;
+    posts[k].remove();
+  }
+
   posts.push({ ...req.body, id: nextId++, created: Date.now() });
   res.status(204);
   res.end();

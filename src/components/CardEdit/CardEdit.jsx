@@ -1,27 +1,28 @@
-import { React, useState, useEffect } from "react";
-import { Routes, Route, Link, useParams, useNavigate } from "react-router-dom";
+import { React, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-function CardEdit({cId, dataPost}) {
+function CardEdit({cId, dataPost, setSwitch}) {
   const [change, setChange] = useState('')
   const navigate = useNavigate();
-  let closeIcon = require("./img/closeIcon.png");
+  let closeIcon2 = require("./img/closeIcon.png");
 
   const handlerSubmit = (e) => {
     e.preventDefault();
 
-  //   // console.log(e.target)
     let url = 'http://localhost:7070/posts'
     fetch(url, {
     method: "POST",
-    body: JSON.stringify({"id": cId, "content": change.value})
-  })
-  .then((response) => {
-    navigate("/");
-  });
-
+    body: JSON.stringify({"id": +cId, "content": change.value})
+    })
+    .then((response) => {
+      navigate("/");
+    });
   }
-  // 
-  // console.log(cId, dataPost.id)
+
+  const closeIcon2Click = () => {
+    setSwitch(false)
+  }
+
   const handlerChange = (e) => {
     setChange({value: e.target.value})
   }
@@ -30,7 +31,7 @@ function CardEdit({cId, dataPost}) {
     <div className="page-card-edit">
       <div className="header-card-edit">
         <p className="name-page-card-edit">Редактировать публикацию</p>
-        <img className='closeIcon' src={closeIcon} alt="close-icon" />
+        <img onClick={closeIcon2Click}className='closeIcon2' src={closeIcon2} alt="close-icon2" />
       </div>
       <form onSubmit={handlerSubmit} className="post-card-edit">
         <textarea name="textarea" rows="2" placeholder="Заполните для редактирования поста" className="section-textarea" onChange={handlerChange}></textarea>

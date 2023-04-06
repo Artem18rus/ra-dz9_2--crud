@@ -1,9 +1,6 @@
 import { React, useState, useEffect } from "react";
-import { Routes, Route, Link, NavLink, redirect, useParams } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { nanoid } from "nanoid";
-// import Redirect from "../Redirect/Redirect";
-
 
 function CreateApp() {
   const [change, setChange] = useState('')
@@ -21,7 +18,7 @@ function CreateApp() {
       navigate("/");
       return
     })
-}, [])
+  }, [])
 
   const handlerSubmit = (e) => {
     e.preventDefault();
@@ -29,12 +26,11 @@ function CreateApp() {
       alert("Поле не заполнено! Не менее 3х символов.")
       return
     }
-    //console.log('handlerSubmit')
     
-    let url = 'http://localhost:7070/posts'
+    let url = 'http://localhost:7070/posts';
     fetch(url, {
     method: "POST",
-    body: JSON.stringify({"id": 3, "content": change.value})
+    body: JSON.stringify({"id": 0, "content": change.value})
   })
   .then((response) => {
     navigate("/");

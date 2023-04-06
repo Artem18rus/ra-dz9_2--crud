@@ -1,8 +1,4 @@
-import { React, useState, useEffect } from "react";
-import { Routes, Route, Link, NavLink, redirect, useParams } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
-import { nanoid } from "nanoid";
-// import CardChange from "../CardChange/CardChange";
+import { React, useState } from "react";
 import CardRemove from "../CardRemove/CardRemove";
 import CardEdit from "../CardEdit/CardEdit";
 
@@ -16,8 +12,7 @@ function CardOpen({cId, data}) {
 
   return (
     <>
-    {/* {console.log(data)} */}
-    {switchCard ? <CardEdit cId={cId} dataPost={data.post} /> : 
+    {switchCard ? <CardEdit cId={cId} dataPost={data.post} setSwitch={setSwitch} /> : 
      (<div className="block-open-card">
         <div className="page-open-card">
           <div className="name-user">Пользователь</div>
@@ -32,7 +27,7 @@ function CardOpen({cId, data}) {
       <CardRemove cId={cId} />
       <button onClick={changeClick} className="btnСhange"><span>Изменить</span></button>
       </div>)
-  }
+    }
   </>
   );
 }

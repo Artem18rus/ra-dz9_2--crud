@@ -1,7 +1,6 @@
 import { React, useState, useEffect } from "react";
-import { Routes, Route, Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { nanoid } from "nanoid";
-// import JsxCreateCard from "../MainPage/JsxCreateCard";
 
 
 function MainPage() {
@@ -19,7 +18,6 @@ function MainPage() {
   }, [])
 
   const dataArr = Object.entries(data);
-  if(dataArr.length === 0) return;
 
   return (
     <>

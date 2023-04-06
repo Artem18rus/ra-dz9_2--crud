@@ -9,7 +9,6 @@ import CardView from "./components/CardView/CardView";
 function App() {
   return (
     <div className="app">
-      {/* <CreateApp /> */}
       <Routes>
         <Route path="/" element={<MainPage />}/>
         <Route path="/posts/new" element={<CreateApp />}/>
