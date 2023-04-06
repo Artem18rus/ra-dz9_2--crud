@@ -40,10 +40,6 @@ span {
 
 }
 
-.list-post {
-
-}
-
 .post, .create-post {
   background: white;
   margin-top: 10px;
@@ -60,10 +56,6 @@ span {
   justify-content: space-between;
   position: relative;
   align-items: center;
-}
-
-.list-post {
-  
 }
 
 .name-user {
@@ -85,14 +77,6 @@ span {
   column-gap: 100px;
   font-weight: bold;
   padding: 7px 0;
-}
-
-.like {
-
-}
-
-.comment {
-
 }
 
 .input {
@@ -135,11 +119,6 @@ span {
   cursor: pointer;
 } 
 
-/* .btn-close {
-  border: 0;
-  padding: 0;
-} */
-
 .block-open-card {
   background: white;
 }
@@ -150,10 +129,6 @@ textarea {
   resize: none;
   margin-top: 10px;
 }
-
-/* hr {
-  margin: 10px 0;
-} */
 
 .btnPublish, .btnСhange, .btnRemove, .btnSave {
   float: right;
