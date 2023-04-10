@@ -11,8 +11,8 @@ function CardEdit({cId, dataPost, setSwitch}) {
 
     let url = 'http://localhost:7070/posts'
     fetch(url, {
-    method: "POST",
-    body: JSON.stringify({"id": +cId, "content": change.value})
+      method: "POST",
+      body: JSON.stringify({"id": +cId, "content": change.value})
     })
     .then((response) => {
       navigate("/");
